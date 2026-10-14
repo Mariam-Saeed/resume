@@ -24,12 +24,31 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install XeLaTeX and Inter
+      - name: Install LaTeX collections and fonts
         run: |
           sudo apt-get update
           sudo apt-get install --yes --no-install-recommends \
-            texlive-xetex fonts-inter fontconfig
+            texlive-xetex texlive-latex-base texlive-latex-recommended \
+            texlive-latex-extra texlive-fonts-recommended lmodern \
+            fonts-inter fontconfig
           fc-cache -f
+
+      - name: Verify LaTeX dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          xelatex --version
+          # Include transitive font/backend requirements, not just package imports.
+          for file in article.cls fullpage.sty titlesec.sty color.sty enumitem.sty \
+            hyperref.sty hxetex.def fancyhdr.sty babel.sty english.ldf array.sty \
+            fontspec.sty pzdr.tfm cmr10.tfm cmsy10.tfm; do
+            kpsewhich "$file" || { echo "::error::Missing TeX dependency: $file"; exit 1; }
+          done
+          # fc-match alone succeeds even when it silently substitutes another font.
+          fc-match --format='%{family}\n' Inter | grep -Eq '(^|,)Inter(,|$)' || {
+            echo '::error::Inter font is unavailable (fontconfig selected a fallback)'
+            exit 1
+          }
 
       - name: Compile resume
         shell: bash

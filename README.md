@@ -11,28 +11,51 @@ resume/
 └── README.md
 ```
 
-`resume.tex` is currently a placeholder that intentionally fails compilation.
-Replace the entire file with your existing source, unchanged, before the first
-build. Include any source assets or custom `.cls`/`.sty` files it needs.
+`resume.tex` contains the resume source. Keep its content and formatting there;
+generated PDFs are never committed.
 
 ## Build locally
 
-On Ubuntu 24.04, install the same minimal packages used in CI:
+On Ubuntu 24.04, install the same package collections used in CI:
 
 ```sh
 sudo apt-get update
-sudo apt-get install --yes --no-install-recommends texlive-xetex fonts-inter fontconfig
+sudo apt-get install --yes --no-install-recommends \
+  texlive-xetex texlive-latex-base texlive-latex-recommended \
+  texlive-latex-extra texlive-fonts-recommended lmodern \
+  fonts-inter fontconfig
 fc-cache -f
 mkdir -p build
 xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=build resume.tex
 xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=build resume.tex
 ```
 
-The result is `build/resume.pdf`. XeLaTeX supports `fontspec` and the installed
-Inter font. `texlive-xetex` also brings the standard LaTeX, recommended, extra,
-and graphics packages through its dependencies. If your source needs additional
-packages, add only their required Ubuntu packages to CI and the local command.
-The exact additional requirements can be checked once the source is supplied.
+The result is `build/resume.pdf`. Required dependencies are:
+
+| Dependency | Supplied by |
+| --- | --- |
+| XeLaTeX, XeTeX PDF backend (`xdvipdfmx`), TeX lookup tools | `texlive-xetex` and its dependencies |
+| `article`, `color`, `fancyhdr`, `babel` (English), `array`, `fontspec`, `hyperref` and its XeTeX backend, standard math fonts | `texlive-latex-base`, `texlive-latex-recommended` and their dependencies |
+| `fullpage`, `titlesec`, `enumitem` | `texlive-latex-extra` |
+| Standard PostScript fonts and Zapf Dingbats metrics (`pzdr.tfm`) | `texlive-fonts-recommended` |
+| Latin Modern fonts for LaTeX defaults | `lmodern` and its `fonts-lmodern` dependency |
+| Inter (regular, bold, italic faces), font discovery/cache | `fonts-inter`, `fontconfig` |
+
+CI installs these collections explicitly, including recommended fonts that
+`--no-install-recommends` would otherwise omit. `hyperref`'s XeTeX link support
+requires `pzdr` even when the document's text uses Inter. `marvosym` is unused
+and remains removed. CI checks package files, standard font metrics, and Inter
+availability before compiling. Ubuntu handles the system libraries, font maps,
+and TeX formats through package dependencies and installation hooks. Git, Bash,
+and standard file utilities are supplied by the Ubuntu runner. No bibliography,
+external graphics, shell-escape tools, or additional language collections are
+required by the current source.
+
+The Ubuntu collections keep the existing TeX Live generation and avoid a full
+TeX Live installation. Maintained full TeX Live Docker images were considered,
+but add a large image download and a different toolchain without a benefit for
+this source. If adopting one later, pin its digest and also pin the Inter source;
+using `latest` alone would not make builds reproducible.
 
 ## GitHub Pages setup (once)
 
