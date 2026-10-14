@@ -37,15 +37,16 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{11pt}{5pt}
 
 %-------------------------
 % Custom commands
 
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{-1pt}}
   }
 }
 
@@ -55,14 +56,14 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \small#3 & \small #4 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeCertItem}[3]{
@@ -77,7 +78,7 @@
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,7 +122,7 @@ Frontend Developer with 2+ years of experience building and delivering productio
         \resumeItem{Live Projects: \href{https://www.thelocalshow.net}{thelocalshow.net}, \href{https://thedesignavenue.net}{thedesignavenue.net}, \href{https://marsabaghush.com}{marsabaghush.com}, \href{https://charobim.art}{charobim.art}}
       \resumeItemListEnd
 
-    \vspace{2pt}
+    \vspace{4pt}
     \resumeSubheading
       {Full Stack Developer}{04/2024 -- 09/2024}
       {\href{https://remotecoders.org}{Remotecoders} (Swiss client: \href{https://fairpicture.org}{Fairpicture})}{Cairo, Egypt}
@@ -181,7 +182,7 @@ Frontend Developer with 2+ years of experience building and delivering productio
   \small{\item{
     \href{https://coursera.org/share/ed24692f08d1a631c923a7ef3b1aeef3}{Introduction to DevOps} (Coursera) $|$
     \href{https://graduation.udacity.com/confirm/e/3ceb7172-c38c-11ed-8abf-2728a0c44453}{Frontend Nanodegree} (Udacity) $|$
-    \href{https://drive.google.com/file/d/1KzK0XMcMiYVH0UQgGdkgWTJawjJ4e2Rp/view?usp=sharing}{CS50} (HarvardX) $|$
+    \href{https://drive.google.com/file/d/1KzK0XMcMiYVH0UQgGdkgWTJawjJ4e2Rp/view?usp=sharing}{CS50} (HarvardX)
     % \href{https://www.hackerrank.com/certificates/914196480dc9}{React Basic} (HackerRank)
   }}
 \end{itemize}
