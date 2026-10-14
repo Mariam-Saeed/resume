@@ -1,0 +1,192 @@
+%-------------------------
+% Resume in Latex
+% Based on Jake Gutierrez's template
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontspec}
+\setmainfont{Inter}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% Removed \textit from subheading rows
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeCertItem}[3]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} $|$ #2 & #3 \\
+    \end{tabular*}\vspace{1pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  {\fontsize{18}{20}\selectfont\textbf{Mariam Saeed}} &
+  \small Cairo, Egypt · 01229265967 · \href{mailto:mariamsaeed750@gmail.com}{mariamsaeed750@gmail.com} \\
+  {\fontsize{11}{13}\selectfont Frontend Developer} &
+  \begin{tabular}[t]{@{}l@{}}
+    \small \href{https://linkedin.com/in/mariam-saeed}{linkedin.com/in/mariam-saeed} · \href{https://github.com/Mariam-Saeed}{github.com/Mariam-Saeed} \\
+    \small Portfolio: \href{https://mariam-saeed.vercel.app}{mariam-saeed.vercel.app}
+  \end{tabular} \\
+\end{tabular*}
+\vspace{4pt}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{
+Frontend Developer with 2+ years of experience independently building and delivering client websites using Vue.js, Nuxt.js, React.js and Tailwind CSS, owning projects from setup to launch. Contributed to open-source projects including OpenHands, DocsGPT, and IBM Carbon Design System.
+}
+\vspace{0pt}
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Frontend Developer}{03/2025 -- Present}
+      {\href{https://ntsal.com}{Ntsal}}{Cairo, Egypt}
+      \resumeItemListStart
+        \resumeItem{Developed 8 client websites using Nuxt.js, Vue.js, and Tailwind CSS, independently owning 6 projects end-to-end from initial setup to launch.}
+        \resumeItem{Introduced framework-native patterns for image delivery, font loading, and SSR data fetching, replacing manual implementations across the codebase.}
+        \resumeItem{Built dynamic content layouts that adapt their structure based on item count, featured status, and CMS-defined content types across multiple client websites.}
+        \resumeItem{Implemented interactive components with nested navigation levels, where parent selection drives synchronized updates across all child content and state.}
+        \resumeItem{Integrated frontend components with a custom CMS, enabling dynamic content updates without code changes.}
+        \resumeItem{Resolved cross-browser and cross-device bugs, including iOS video playback and Firefox rendering inconsistencies across multiple client sites.}
+        % \resumeItem{Collaborate with designers to translate Figma designs into responsive interfaces, independently handling tablet breakpoints when not provided.}
+        \resumeItem{Live Projects: \href{https://www.thelocalshow.net}{thelocalshow.net}, \href{https://thedesignavenue.net}{thedesignavenue.net}, \href{https://marsabaghush.com}{marsabaghush.com}, \href{https://charobim.art}{charobim.art}}
+      \resumeItemListEnd
+
+    \vspace{2pt}
+    \resumeSubheading
+      {Full Stack Developer}{04/2024 -- 09/2024}
+      {\href{https://remotecoders.org}{Remotecoders} (Swiss client: \href{https://fairpicture.org}{Fairpicture})}{Cairo, Egypt}
+      \resumeItemListStart
+        \resumeItem{Developed an end-to-end project cost calculator using Django and JavaScript, supporting multi-currency estimation based on services, production and travel duration.}
+        \resumeItem{Built user management features for the FairConsent admin panel, including listing, search, single and multi-selection, deletion, and deactivation on the frontend, with corresponding Django backend logic.}
+        \resumeItem{Implemented chat message edit and delete functionality with a one-hour restriction window, handling both frontend and backend.}
+        \resumeItem{Enhanced platform UX through multiple improvements including drag-and-drop table interactions, logo upload with instant visual feedback, and various bug fixes to maintain platform stability.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------OPEN SOURCE-----------
+\section{Open Source Contributions}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{OpenHands} $|$ 66.4k+ stars $|$ \href{https://github.com/OpenHands/OpenHands/pull/12041}{PR \#12041}}{}
+      \resumeItemListStart
+        \resumeItem{Resolved global state conflicts in the conversation store by decoupling local UI loading states from global action panels, improving UI consistency and reliability without affecting other loading flows.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{DocsGPT} $|$ 17.3k+ stars $|$ \href{https://github.com/arc53/DocsGPT/pull/2033}{PR \#2033}}{}
+      \resumeItemListStart
+        \resumeItem{Developed a ``What's New'' notification component using React, configurable via environment variables, with localStorage-based persistence to manage user dismissal across sessions.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Carbon Design System (IBM)} $|$ 8.7k+ stars $|$ \href{https://github.com/carbon-design-system/carbon/pull/20808}{PR \#20808}}{}
+      \resumeItemListStart
+        \resumeItem{Standardized readonly and disabled states for Select components across both the React and Web Component libraries, updating unit tests to ensure UI consistency.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Frontend}{: Vue.js, Nuxt.js, Pinia, React.js, JavaScript (ES6+), TypeScript, HTML5, CSS, SASS, Bootstrap, Tailwind CSS, Material UI, Vitest} \\
+     \textbf{Backend}{: Django, Python, Node.js, Express.js} \\
+     \textbf{Tools}{: Git, GitHub, GitLab, Docker, Swagger, Postman, ClickUp, KanbanFlow}
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+     {\textbf{Higher Technological Institute, 10th of Ramadan} $|$ Bachelor's Degree, Computer Science}{2017 -- 2021}
+     \resumeSubHeadingListEnd
+
+%-----------CERTIFICATES-----------
+\section{Certificates \& Courses}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \href{https://graduation.udacity.com/confirm/e/3ceb7172-c38c-11ed-8abf-2728a0c44453}{Frontend Nanodegree} (Udacity) $|$
+    \href{https://drive.google.com/file/d/1KzK0XMcMiYVH0UQgGdkgWTJawjJ4e2Rp/view?usp=sharing}{CS50} (HarvardX) $|$
+    \href{https://www.hackerrank.com/certificates/914196480dc9}{React Basic} (HackerRank)
+  }}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

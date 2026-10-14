@@ -1,0 +1,24 @@
+# Generated output (never commit PDFs).
+*.pdf
+/build/
+/_site/
+
+# LaTeX auxiliary files.
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.dvi
+*.nav
+*.snm
+*.vrb
+*.bbl
+*.blg
+*.bcf
+*.run.xml
