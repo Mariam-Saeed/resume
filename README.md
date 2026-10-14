@@ -2,7 +2,7 @@
 
 My resume, written in LaTeX and automatically built and published as a PDF using GitHub Actions and GitHub Pages.
 
-**[View Resume (PDF)]**<a href="https://mariam-saeed.github.io/resume/resume.pdf" target="_blank" rel="noopener noreferrer">mariam-saeed.github.io/resume/resume.pdf</a>
+**[View Resume (PDF)](https://mariam-saeed.github.io/resume/resume.pdf)**
 
 ## Tech Stack
 
